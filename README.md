@@ -4,9 +4,9 @@ Example for adding third party plugins to fn project server.
 
 The first is `logspam`.
 
-## Method 1
+## Method 1 - Go style
 
-Copy main.go, add listeners, see main.go here.
+Copy main.go, add listeners, see [main.go](main.go) here.
 
 Then assuming you have the fn project in your go path of you've vendored it here, it should build:
 
@@ -23,9 +23,9 @@ YO! This is an annoying message that will happen every time a function is called
 YO! And this is an annoying message that will happen AFTER every time a function is called.
 ```
 
-## Method 2
+## Method 2 - Docker style
 
-Docker coolness. First copy main.go and add your extensions, see main.go in this dir.
+First copy main.go and add your extensions, see [main.go](main.go) for an example.
 
 Then make a Dockerfile with only this in it:
 
@@ -46,3 +46,14 @@ Then start it with:
 ```sh
 docker run --rm -it --name functions -v /var/run/docker.sock:/var/run/docker.sock -v $PWD/data:/app/data -p 8080:8080 treeder/fn-custom
 ```
+
+Now if you deploy a function and call it:
+
+```sh
+fn init --runtime go myfunc
+cd myfunc
+fn deploy --local --app myapp
+fn call myapp /myfunc
+```
+
+You'll see our annoying output that this extension adds!
