@@ -2,13 +2,15 @@
 
 Example for adding third party plugins to fn project server.
 
-The first is `logspam`.
+This repo includes an example called `logspam`.
 
 ## Method 1 - Go style
 
+This is good for extension developers as it's fast builds for dev/testing.
+
 Copy main.go, add listeners, see [main.go](main.go) here.
 
-Then assuming you have the fn project in your go path of you've vendored it here, it should build:
+Then assuming you have the fn project in your GOPATH or you've vendored it here, it should build:
 
 ```sh
 go build -o fn-server
@@ -24,6 +26,8 @@ YO! And this is an annoying message that will happen AFTER every time a function
 ```
 
 ## Method 2 - Docker style
+
+This way is good for end users that just want to add already developed/tested extensions. It's easier, but slower.
 
 First copy main.go and add your extensions, see [main.go](main.go) for an example.
 
