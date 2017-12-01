@@ -5,9 +5,26 @@ import (
 	"fmt"
 
 	"github.com/fnproject/fn/api/models"
+	"github.com/fnproject/fn/api/server"
+	"github.com/fnproject/fn/fnext"
 )
 
-// This implements the extender.CallListener interface
+func init() {
+	server.RegisterExtension(&spamExt{})
+}
+
+type spamExt struct {
+}
+
+func (e *spamExt) Name() string {
+	return "github.com/treeder/fn-ext-example/logspam"
+}
+
+func (e *spamExt) Setup(s fnext.ExtServer) error {
+	s.AddCallListener(&LogSpam{})
+	return nil
+}
+
 type LogSpam struct {
 }
 
