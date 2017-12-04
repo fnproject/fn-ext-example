@@ -37,8 +37,8 @@ repo for an example.
 Then assuming you have the fn project in your GOPATH or you've vendored it here, it should build:
 
 ```sh
-go build -o fn-server
-./fn-server
+go build -o fnserver
+./fnserver
 ```
 
 Then deploy a function and you'll see the special spam output like this:
