@@ -4,8 +4,8 @@ import (
 	"context"
 
 	"github.com/fnproject/fn/api/server"
-	"github.com/treeder/fn-plugin-example/logspam"
-	"github.com/treeder/fn-plugin-example2/logspam2"
+	_ "github.com/treeder/fn-ext-example/logspam"
+	// _ "github.com/treeder/fn-ext-example2/logspam2"
 )
 
 func main() {
@@ -13,9 +13,8 @@ func main() {
 
 	funcServer := server.NewFromEnv(ctx)
 	// Setup your custom extensions, listeners, etc here
-	spammer := &logspam.LogSpam{}
-	funcServer.AddCallListener(spammer)
-	funcServer.AddCallListener(&logspam2.LogSpam{})
-
+	// spammer := &logspam.LogSpam{}
+	// funcServer.AddCallListener(spammer)
+	// funcServer.AddCallListener(&logspam2.LogSpam{})
 	funcServer.Start(ctx)
 }
