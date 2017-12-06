@@ -10,7 +10,7 @@ import (
 
 func main() {
 	ctx := context.Background()
-
 	funcServer := server.NewFromEnv(ctx)
+	funcServer.AddExtensionByName("github.com/treeder/fn-ext-example/logspam")
 	funcServer.Start(ctx)
 }

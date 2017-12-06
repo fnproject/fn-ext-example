@@ -26,6 +26,14 @@ Now run your new server:
 docker run --rm --name fnserver -it -v /var/run/docker.sock:/var/run/docker.sock -v $PWD/data:/app/data -p 8080:8080 imageuser/imagename
 ```
 
+And deploy a function to try it out:
+
+```sh
+fn init --runtime go myfunc
+cd myfunc
+fn deploy --local --app myapp
+fn call myapp /myfunc
+```
 
 ## Method 2 - for extension developers
 
