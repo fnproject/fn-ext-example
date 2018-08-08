@@ -1,2 +1,2 @@
 extensions:
-  - name: github.com/treeder/fn-ext-example/logspam
+  - name: github.com/fnproject/fn-ext-example/logspam

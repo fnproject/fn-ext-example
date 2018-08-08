@@ -1,1 +1,1 @@
-FROM fnproject/functions
+FROM fnproject/fnserver

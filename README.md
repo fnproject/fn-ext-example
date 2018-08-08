@@ -39,7 +39,7 @@ fn call myapp /myfunc
 
 This method is good for extension developers as it's fast builds for dev/testing.
 
-Copy [main.go](https://github.com/fnproject/fn/blob/master/main.go) from `fn` repo, then add plugins. See [main.go](main.go) in this
+Copy [main.go](https://github.com/fnproject/fn/blob/master/cmd/fnserver/main.go) from `fn` repo, then add plugins. See [main.go](main.go) in this
 repo for an example.
 
 Then assuming you have the fn project in your GOPATH or you've vendored it here, it should build:
@@ -52,7 +52,15 @@ go build -o fnserver
 Then deploy a function and you'll see the special spam output like this:
 
 ```txt
-INFO[0000] Serving Functions API on address `:8080`
+
+        ______
+       / ____/___
+      / /_  / __ \
+     / __/ / / / /
+    /_/   /_/ /_/
+        v0.3.528
+
+INFO[2018-08-08T13:46:13+03:00] Fn serving on `:8080`                         type=full
 YO! This is an annoying message that will happen every time a function is called.
 YO! And this is an annoying message that will happen AFTER every time a function is called.
 ```

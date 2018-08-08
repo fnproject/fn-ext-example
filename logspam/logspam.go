@@ -17,7 +17,7 @@ type spamExt struct {
 }
 
 func (e *spamExt) Name() string {
-	return "github.com/treeder/fn-ext-example/logspam"
+	return "github.com/fnproject/fn-ext-example/logspam"
 }
 
 func (e *spamExt) Setup(s fnext.ExtServer) error {
