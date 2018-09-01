@@ -1,6 +1,6 @@
-# fn-plugin-example
+# fn-ext-example
 
-Example for adding third party plugins to fn project server.
+Example for adding extensioms (third party plugins) to fn project server.
 
 This repo includes an example called `logspam`.
 
