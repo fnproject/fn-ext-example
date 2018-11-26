@@ -23,7 +23,7 @@ fn build-server -t imageuser/imagename
 Now run your new server:
 
 ```sh
-docker run --rm --name fnserver -it -v /var/run/docker.sock:/var/run/docker.sock -v $PWD/data:/app/data -p 8080:8080 imageuser/imagename
+docker run --rm --name fnserver -it -v $PWD/data:/app/data -p 8080:8080 imageuser/imagename
 ```
 
 And deploy a function to try it out:
