@@ -10,8 +10,8 @@ This will build a custom Docker image for you with the extensions you provide in
 
 ```yaml
 extensions:
-  - name: github.com/treeder/fn-ext-example/logspam
-  - name: github.com/treeder/fn-ext-example/logspam2
+  - name: github.com/fnproject/fn-ext-example/logspam
+  - name: github.com/treeder/fn-ext-example2/logspam2
 ```
 
 Build it:
@@ -23,7 +23,7 @@ fn build-server -t imageuser/imagename
 Now run your new server:
 
 ```sh
-docker run --rm --name fnserver -it -v $PWD/data:/app/data -p 8080:8080 imageuser/imagename
+docker run --privileged --rm --name fnserver -it -v $PWD/data:/app/data -p 8080:8080 imageuser/imagename
 ```
 
 And deploy a function to try it out:
